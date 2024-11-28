@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Sujoy Kar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: auto;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0073e6;
+        }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .nav-tabs a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0073e6;
+            color: white;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="IMG_20241128_144458_550.jpg" alt="Sujoy Kar's Profile Image">
+        <h1>Contact Me</h1>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Me</a>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h1>Get in Touch</h1>
+            <p>If you have any questions or just want to say hello, feel free to send me a message!</p>
+            
+            <!-- Contact Form (Formspree) -->
+            <form action="https://formspree.io/f/mbljzbwk" method="POST">
+                <label for="email">Your email:</label>
+                <input type="email" name="email" id="email" placeholder="Your email" required>
+
+                <label for="message">Your message:</label>
+                <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Sujoy Kar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
