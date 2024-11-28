@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujoy Kar - Fullstack Developer</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const themeToggle = document.getElementById("theme-toggle");
+            themeToggle.addEventListener("click", function() {
+                document.body.classList.toggle("dark-mode");
+                if (document.body.classList.contains("dark-mode")) {
+                    themeToggle.innerText = "Switch to Light Mode";
+                } else {
+                    themeToggle.innerText = "Switch to Dark Mode";
+                }
+            });
+        });
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +25,11 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: white;
         }
         header {
             background-color: #0073e6;
@@ -60,6 +78,27 @@
             background-color: #0073e6;
             color: white;
         }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .nav-tabs a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: bold;
+        }
+        #theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -68,8 +107,17 @@
         <h1>Sujoy Kar</h1>
         <p>Fullstack Developer | Student</p>
     </header>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle">Switch to Dark Mode</button>
     
     <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+
         <div class="section">
             <h1>Personal Details</h1>
             <p><b>Age:</b> 19</p>
@@ -104,8 +152,6 @@
             <h1>Portfolio</h1>
             <ul>
                 <li><a href="portfolio.html">Personal Portfolio Website</a></li>
-                <li><a href="project.html">E-commerce Project</a></li>
-                <li><a href="blog.html">Blog Application</a></li>
             </ul>
         </div>
 
@@ -121,17 +167,5 @@
     <footer class="footer">
         <p>© 2024 Sujoy Kar. All rights reserved.</p>
     </footer>
-    
-    <h2> Bored? Watch this.</h2>
-    
-    <video width="320" height="240" controls>
-        <source src="DeltaForceClient-Win64-Shipping 2024.08.30 - 12.15.20.02.DVR.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <br><br>
-    <a href="DeltaForceClient-Win64-Shipping 2024.08.30 - 12.15.20.02.DVR.mp4" download="downloaded_video.mp4">
-        <button>Download Video</button>
-    </a>
 </body>
 </html>
