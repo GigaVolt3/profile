@@ -4,102 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujoy Kar - Fullstack Developer</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const themeToggle = document.getElementById("theme-toggle");
-            themeToggle.addEventListener("click", function() {
-                document.body.classList.toggle("dark-mode");
-                if (document.body.classList.contains("dark-mode")) {
-                    themeToggle.innerText = "Switch to Light Mode";
-                } else {
-                    themeToggle.innerText = "Switch to Dark Mode";
-                }
-            });
-        });
-    </script>
+    
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f0f2f5;
             color: #333;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .dark-mode {
+
+        body.dark-mode {
             background-color: #333;
-            color: white;
-        }
-        header {
-            background-color: #0073e6;
             color: #fff;
-            padding: 20px;
-            text-align: center;
         }
+
+        header {
+            background-color: #005bb5;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header.dark-mode {
+            background-color: #444;
+        }
+
         header img {
+            display: block;
             border-radius: 50%;
             width: 150px;
             height: auto;
+            margin: 0 auto 15px;
         }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 10px 0 5px;
+            visibility: visible;
+            color: #fff;
+        }
+
         .container {
-            width: 80%;
-            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
         }
+
         .section {
             margin: 20px 0;
-            padding: 20px;
+            padding: 25px;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        h1 {
-            color: #0073e6;
+
+        .section.dark-mode {
+            background: #444;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-        ul li {
-            background: #0073e6;
-            color: #fff;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+
+        h1, h2 {
+            color: #005bb5;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
-        .social-links a {
-            color: #0073e6;
-            text-decoration: none;
-            margin-right: 10px;
+
+        h1.dark-mode, h2.dark-mode {
+            color: #66b2ff;
         }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #0073e6;
-            color: white;
-        }
+
         .nav-tabs {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 25px 0;
+            gap: 20px;
         }
+
         .nav-tabs a {
-            margin: 0 15px;
             text-decoration: none;
-            color: #0073e6;
-            font-weight: bold;
+            color: #005bb5;
+            font-weight: 600;
+            padding: 10px 15px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
-        #theme-toggle {
+
+        .nav-tabs a:hover {
+            background-color: #005bb5;
+            color: #fff;
+            border-color: #005bb5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #005bb5;
+            color: white;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer.dark-mode {
+            background-color: #444;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form.dark-mode {
+            background: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        label.dark-mode {
+            color: #fff;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #005bb5;
+            box-shadow: 0 0 5px rgba(0, 91, 181, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #005bb5;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #003f80;
+            transform: translateY(-2px);
+        }
+
+        button#theme-toggle {
             position: fixed;
             top: 10px;
             right: 10px;
-            background-color: #0073e6;
-            color: white;
-            padding: 10px;
+            background-color: #005bb5;
+            color: #fff;
             border-radius: 50%;
+            font-size: 1rem;
+            padding: 10px;
             cursor: pointer;
         }
+
+        button#theme-toggle:hover {
+            background-color: #003f80;
+        }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            themeToggle.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+                document.querySelectorAll(".section, form, header, .footer, h1, h2, label").forEach(el => el.classList.toggle("dark-mode"));
+                themeToggle.innerText = document.body.classList.contains("dark-mode") ? "Switch to Light Mode" : "Switch to Dark Mode";
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -107,17 +214,12 @@
         <h1>Sujoy Kar</h1>
         <p>Fullstack Developer | Student</p>
     </header>
-
-    <!-- Dark Mode Toggle Button -->
     <button id="theme-toggle">Switch to Dark Mode</button>
-    
     <div class="container">
-        <!-- Navigation Tabs -->
         <div class="nav-tabs">
             <a href="index.html">Home</a>
             <a href="contact.html">Contact Me</a>
         </div>
-
         <div class="section">
             <h1>Personal Details</h1>
             <p><b>Age:</b> 19</p>
@@ -125,12 +227,10 @@
             <p><b>Phone:</b> <a href="tel:+918073054288">8073054288</a></p>
             <p><b>Address:</b> 123, SH-town, Toranagallu</p>
         </div>
-
         <div class="section">
             <h1>About Me</h1>
             <p>Hi, I'm Sujoy, a passionate Fullstack Developer and Information Science student at GM University, Davangere. I enjoy coding, solving problems, and creating web applications that make a difference. As a gaming enthusiast, I aspire to combine my love for gaming with my skills to pursue a career in game development.</p>
         </div>
-
         <div class="section">
             <h1>Skills</h1>
             <ul>
@@ -142,21 +242,18 @@
                 <li>Fullstack Development</li>
             </ul>
         </div>
-
         <div class="section">
             <h1>Hobbies</h1>
-            <p>In my free time, I am a gamer who really enjoys the exploration of both classic and modern titles that spark creativity. Other than gaming, I love learning about new technologies, fiddling with code projects, and graphic design to help visualize. These hobbies fuel my passion for game development, sharpen my problem-solving skills, and pay attention to detail.</p>
+            <p>In my free time, I enjoy gaming, exploring both classic and modern titles that spark creativity. I also love learning about new technologies, working on code projects, and graphic design. These hobbies fuel my passion for game development and sharpen my problem-solving skills.</p>
         </div>
-
         <div class="section">
             <h1>Connect with Me</h1>
-            <p class="social-links">
-                <a href="https://github.com/GigaVolt3" target="_blank">GitHub</a>
+            <p>
+                <a href="https://github.com/GigaVolt3" target="_blank">GitHub</a><br>
                 <a href="https://www.linkedin.com/in/sujoy-kar-185588295/" target="_blank">LinkedIn</a>
             </p>
         </div>
     </div>
-
     <footer class="footer">
         <p>© 2024 Sujoy Kar. All rights reserved.</p>
     </footer>
