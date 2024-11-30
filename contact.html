@@ -13,6 +13,10 @@
             background-color: #f4f4f9;
             color: #333;
         }
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
         header {
             background-color: #0073e6;
             color: #fff;
@@ -35,8 +39,14 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .section.dark-mode {
+            background: #444;
+        }
         h1 {
             color: #0073e6;
+        }
+        h1.dark-mode {
+            color: #66b2ff;
         }
         .nav-tabs {
             display: flex;
@@ -49,11 +59,17 @@
             color: #0073e6;
             font-weight: bold;
         }
+        .nav-tabs a:hover {
+            text-decoration: underline;
+        }
         .footer {
             text-align: center;
             padding: 10px;
             background-color: #0073e6;
             color: white;
+        }
+        .footer.dark-mode {
+            background-color: #444;
         }
         form {
             width: 100%;
@@ -64,10 +80,16 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        form.dark-mode {
+            background: #444;
+        }
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+        }
+        label.dark-mode {
+            color: #fff;
         }
         input, textarea {
             width: 100%;
@@ -75,6 +97,10 @@
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+        input:focus, textarea:focus {
+            border-color: #0073e6;
+            outline: none;
         }
         button {
             background-color: #0073e6;
@@ -88,13 +114,40 @@
         button:hover {
             background-color: #005bb5;
         }
+        button#theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #0073e6;
+            color: white;
+            border-radius: 50%;
+            font-size: 1rem;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button#theme-toggle:hover {
+            background-color: #005bb5;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            themeToggle.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+                document.querySelectorAll(".section, form, h1, label, .footer").forEach(el => el.classList.toggle("dark-mode"));
+                themeToggle.innerText = document.body.classList.contains("dark-mode") ? "Switch to Light Mode" : "Switch to Dark Mode";
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
         <img src="IMG_20241129_111038_807.jpg" alt="Sujoy Kar's Profile Image">
         <h1>Contact Me</h1>
     </header>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">Switch to Dark Mode</button>
 
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
